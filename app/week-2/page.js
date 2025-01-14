@@ -1,8 +1,12 @@
-export default function Page() {
+import StudentInfo from './student-info';
+import Link from 'next/link';
+const Week2Page = () => {
   return (
-    <main>
+    <body>
       <h1>Shopping List</h1>
-    </main>
+      <StudentInfo />
+    </body>
   );
-}
-import StudentInfo from "./student-info.js";
+};
+
+export default Week2Page;
