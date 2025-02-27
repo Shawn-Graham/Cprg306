@@ -1,19 +1,22 @@
 "use client";
 import React, { useState } from "react";
 import Item from "./item"; // Import the Item component
-import items from "./items.json"; // Import the items from JSON file
 
-function ItemList() {
+function ItemList({ items }) { // Receive items as a prop
   const [sortBy, setSortBy] = useState("name"); // Sorting state
 
-  // Sorting logic
-  let sortedItems = [...items];
+  // Create a sorted copy of the items array
+  const getSortedItems = () => {
+    let sortedItems = [...items]; // Make a copy to prevent mutation
 
-  if (sortBy === "name") {
-    sortedItems.sort((a, b) => a.name.localeCompare(b.name));
-  } else if (sortBy === "category") {
-    sortedItems.sort((a, b) => a.category.localeCompare(b.category));
-  }
+    if (sortBy === "name") {
+      sortedItems.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortBy === "category") {
+      sortedItems.sort((a, b) => a.category.localeCompare(b.category));
+    }
+
+    return sortedItems;
+  };
 
   return (
     <div
@@ -46,7 +49,7 @@ function ItemList() {
 
       {/* Render Items */}
       <ul style={{ listStyle: "none", padding: 0 }}>
-        {sortedItems.map((item) => (
+        {getSortedItems().map((item) => (
           <Item
             key={item.id}
             name={item.name}
