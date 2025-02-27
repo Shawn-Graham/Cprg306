@@ -62,24 +62,24 @@ export default function GroceryForm() {
           </div>
         </div>
       </div>
-      <select
-  value={category}
-  onChange={(e) => setCategory(e.target.value)}
-  className="ml-1 border-2 border-gray-300 p-2 rounded-lg font-sans"
->
-  <option value="" disabled>Category</option>
-  <option value="produce">Produce</option>
-  <option value="dairy">Dairy</option>
-  <option value="bakery">Bakery</option>
-  <option value="meat">Meat</option>
-  <option value="frozen">Frozen Foods</option>
-  <option value="canned">Canned Goods</option>
-  <option value="dry">Dry Goods</option>
-  <option value="beverages">Beverages</option>
-  <option value="snacks">Snacks</option>
-  <option value="household">Household</option>
-  <option value="other">Other</option>
-</select>
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="ml-1 border-2 border-gray-300 p-2 rounded-lg font-sans"
+          >
+            <option value disabled>Category</option>
+            <option value="produce" selected>Produce</option>
+            <option value="dairy">Dairy</option>
+            <option value="bakery">Bakery</option>
+            <option value="meat">Meat</option>
+            <option value="frozen">Frozen Foods</option>
+            <option value="canned">Canned Goods</option>
+            <option value="dry">Dry Goods</option>
+            <option value="beverages">Beverages</option>
+            <option value="snacks">Snacks</option>
+            <option value="household">Household</option>
+            <option value="other">Other</option>
+          </select>
         </div>
 
         
